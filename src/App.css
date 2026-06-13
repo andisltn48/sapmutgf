@@ -234,15 +234,12 @@
   margin: 5px 0;
 }
 
-@media (max-width: 480px) {
-  .price-header-pill h1 {
-    font-size: 24px;
-  }
-  
-  .card-header-pill {
-    font-size: 20px;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
+
+@media (max-width: 768px) {
   .pill-button {
     font-size: 36px;
     padding: 8px 40px;
@@ -280,5 +277,13 @@
   .pill-label {
     font-size: 9px;
     padding: 4px 12px;
+  }
+
+  .price-header-pill h1 {
+    font-size: 24px;
+  }
+  
+  .card-header-pill {
+    font-size: 20px;
   }
 }
