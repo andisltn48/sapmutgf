@@ -1,10 +1,10 @@
 .landing-container {
-  position: fixed; /* Use fixed to prevent any scrolling */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  height: 100dvh; /* Dynamic viewport height for modern mobile browsers */
+  height: 100dvh;
   background-color: #0c0806;
   background-size: cover;
   background-position: center;
@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  touch-action: none; /* Prevent touch scrolling/bouncing on some mobile browsers */
+  touch-action: none;
 }
 
 .content-wrapper {
@@ -29,6 +29,7 @@
   box-sizing: border-box;
 }
 
+/* Home Page Animations */
 .button-group {
   display: flex;
   flex-direction: column;
@@ -51,17 +52,24 @@
   font-size: 40px;
   font-weight: 400;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   min-width: 280px;
   max-width: 90%;
   white-space: nowrap;
   line-height: 1.2;
+  opacity: 0;
+  animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+.pill-button:nth-child(1) { animation-delay: 0.1s; }
+.pill-button:nth-child(2) { animation-delay: 0.2s; }
+.pill-button:nth-child(3) { animation-delay: 0.3s; }
 
 .pill-button:hover {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.8);
-  transform: scale(1.02);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .footer-labels {
@@ -73,6 +81,8 @@
   gap: 15px;
   padding: 0 10px;
   box-sizing: border-box;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
 }
 
 .pill-label {
@@ -87,22 +97,21 @@
   white-space: nowrap;
 }
 
-/* About Page Styles */
+/* About Page Styles & Animations */
 .about-page {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 0.5s ease-out;
-  padding-bottom: 70px; /* Space for footer labels */
+  padding-bottom: 70px;
   box-sizing: border-box;
 }
 
 .about-container {
   max-width: 800px;
   width: 90%;
-  max-height: 70vh; /* Keep it shorter to avoid overlapping footer */
+  max-height: 70vh;
   overflow-y: auto;
   padding-right: 15px;
 }
@@ -114,17 +123,8 @@
   font-size: 14px;
   margin-bottom: 15px;
   display: inline-block;
-}
-
-/* Custom scrollbar */
-.about-container::-webkit-scrollbar,
-.price-container::-webkit-scrollbar {
-  width: 4px;
-}
-.about-container::-webkit-scrollbar-thumb,
-.price-container::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.2s forwards;
 }
 
 .about-title {
@@ -133,7 +133,19 @@
   color: white;
   margin-bottom: 20px;
   font-weight: 400;
+  opacity: 0;
+  animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
+
+.about-content p {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.about-content p:nth-child(1) { animation-delay: 0.4s; }
+.about-content p:nth-child(2) { animation-delay: 0.5s; }
+.about-content p:nth-child(3) { animation-delay: 0.6s; }
+.about-content p:nth-child(4) { animation-delay: 0.7s; }
 
 .about-content {
   font-family: 'Montserrat', sans-serif;
@@ -146,7 +158,7 @@
   text-align: justify;
 }
 
-/* Price Page Styles */
+/* Price Page Styles & Animations */
 .price-page {
   width: 100%;
   height: 100%;
@@ -154,7 +166,6 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 70px;
-  animation: fadeIn 0.5s ease-out;
   box-sizing: border-box;
 }
 
@@ -176,6 +187,8 @@
   border-radius: 40px;
   width: 100%;
   text-align: center;
+  opacity: 0;
+  animation: fadeInScale 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
 .price-header-pill h1 {
@@ -192,6 +205,8 @@
   color: white;
   font-family: 'Italiana', serif;
   font-size: 16px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.4s forwards;
 }
 
 .price-cards-stack {
@@ -211,7 +226,13 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  opacity: 0;
+  animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+.price-card:nth-child(1) { animation-delay: 0.5s; }
+.price-card:nth-child(2) { animation-delay: 0.6s; }
+.price-card:nth-child(3) { animation-delay: 0.7s; }
 
 .card-header-pill {
   background: #a06a50;
@@ -230,9 +251,36 @@
   line-height: 1.4;
 }
 
+/* Animations Definitions */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Custom scrollbar */
+.about-container::-webkit-scrollbar,
+.price-container::-webkit-scrollbar {
+  width: 4px;
+}
+.about-container::-webkit-scrollbar-thumb,
+.price-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
 }
 
 /* Responsiveness adjustments */
@@ -260,6 +308,6 @@
   }
   
   .price-container, .about-container {
-    max-height: 65vh; /* Even tighter for small screens */
+    max-height: 65vh;
   }
 }
