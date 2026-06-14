@@ -6,7 +6,7 @@ const Home = () => (
       <PillButton to="/about">About me</PillButton>
       <PillButton to="/rules">Rules</PillButton>
       <PillButton to="/pricelist">Photoshoot Price</PillButton>
-      <PillButton type="button" onClick={() => window.location.href = 'mailto:shafamuthiazf@gmail.com'}>
+      <PillButton type="button" onClick={() => window.open('https://wa.me/6282255977866', '_blank')}>
         Contact
       </PillButton>
     </div>
