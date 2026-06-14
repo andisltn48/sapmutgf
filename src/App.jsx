@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
+import Rules from './pages/Rules';
 import Pricelist from './pages/Pricelist';
 import PricelistPersonal from './pages/PricelistPersonal';
 import PricelistCouple from './pages/PricelistCouple';
@@ -16,6 +17,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/rules" element={<Rules />} />
           <Route path="/pricelist" element={<Pricelist />} />
           <Route path="/pricelist/personal" element={<PricelistPersonal />} />
           <Route path="/pricelist/couple" element={<PricelistCouple />} />
