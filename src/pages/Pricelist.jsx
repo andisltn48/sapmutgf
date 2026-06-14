@@ -1,30 +1,14 @@
+import PillButton from '../components/PillButton';
 import { Link } from 'react-router-dom';
-import PriceCard from './PriceCard';
-
-const priceItems = [
-  { time: '1 hour', price: '135k', drive: '5 day', grading: '5 Color' },
-  { time: '2 hour', price: '245k', drive: '10 day', grading: '10 Color' },
-  { time: '3 hour', price: '350k', drive: '18 day', grading: '20 Color' }
-];
 
 const Pricelist = () => (
   <div className="price-page">
-    <div className="price-container">
-      <Link to="/" className="back-link">← Back</Link>
-      
-      <div className="price-header-pill">
-        <h1 className="elegant-text">Personal Photoshoot</h1>
-      </div>
-      
-      <div className="price-subtitle-pill">
-        <span>Birthday . Concept . Traveling</span>
-      </div>
-
-      <div className="price-cards-stack">
-        {priceItems.map((item, i) => (
-          <PriceCard key={i} item={item} />
-        ))}
-      </div>
+    <div className="button-group">
+      <Link to="/" className="back-link">← Back to Home</Link>
+      <PillButton to="/pricelist/personal">Personal</PillButton>
+      <PillButton to="/pricelist/couple">Couple</PillButton>
+      <PillButton to="/pricelist/graduation">Graduation</PillButton>
+      <PillButton to="/pricelist/event">Event</PillButton>
     </div>
   </div>
 );
