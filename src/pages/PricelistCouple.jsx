@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import PriceCard from './PriceCard';
 
 const priceItems = [
-  { time: '1.5 hour', price: '450k', drive: '7 day', grading: '15 Color' },
-  { time: '2.5 hour', price: '750k', drive: '14 day', grading: '25 Color' }
+  { time: '1 hour', price: '166k', drive: '5 day', grading: '8 Color' },
+  { time: '2 hours', price: '265k', drive: '10 day', grading: '12 Color' },
+  { time: '3 hours', price: '380k', drive: '18 day', grading: '20 Color' }
 ];
 
 const PricelistCouple = () => (
@@ -12,11 +13,11 @@ const PricelistCouple = () => (
       <Link to="/pricelist" className="back-link">← Back to Pricelist</Link>
       
       <div className="price-header-pill">
-        <h1 className="elegant-text">Couple / Bestie</h1>
+        <h1 className="elegant-text">Couple Photoshoot</h1>
       </div>
       
       <div className="price-subtitle-pill">
-        <span>Engagement . Prewedding . Bestie</span>
+        <span>Anniversary . Concept . Traveling . Friends</span>
       </div>
 
       <div className="price-cards-stack">

@@ -4,8 +4,8 @@ const Home = () => (
   <div className="home-content">
     <div className="button-group">
       <PillButton to="/about">About me</PillButton>
-      <PillButton to="/pricelist">Photoshoot Price</PillButton>
       <PillButton to="/rules">Rules</PillButton>
+      <PillButton to="/pricelist">Photoshoot Price</PillButton>
       <PillButton type="button" onClick={() => window.location.href = 'mailto:shafamuthiazf@gmail.com'}>
         Contact
       </PillButton>

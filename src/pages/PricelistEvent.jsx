@@ -1,10 +1,20 @@
 import { Link } from 'react-router-dom';
-import PriceCard from './PriceCard';
 
 const priceItems = [
-  { time: 'Half Day', price: '1.5M', drive: '14 day', grading: 'All Files' },
-  { time: 'Full Day', price: '2.5M', drive: '21 day', grading: 'All Files' }
+  { time: '3 Hours', price: '350k', drive: '18 day', note: 'Free Video 20 sec' },
 ];
+
+const PriceCard = ({ item }) => (
+  <div className="price-card">
+    <div className="card-header-pill">
+      {item.time} : {item.price}
+    </div>
+    <div className="card-details">
+      <p>Drive {item.drive}</p>
+      <p>{item.note}</p>
+    </div>
+  </div>
+);
 
 const PricelistEvent = () => (
   <div className="price-page">
@@ -12,12 +22,10 @@ const PricelistEvent = () => (
       <Link to="/pricelist" className="back-link">← Back to Pricelist</Link>
       
       <div className="price-header-pill">
-        <h1 className="elegant-text">Event Documentation</h1>
+        <h1 className="elegant-text">Event Photoshoot</h1>
       </div>
       
-      <div className="price-subtitle-pill">
-        <span>Birthday . Seminar . Gathering</span>
-      </div>
+      
 
       <div className="price-cards-stack">
         {priceItems.map((item, i) => (
