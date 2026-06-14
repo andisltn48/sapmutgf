@@ -64,6 +64,7 @@
 .pill-button:nth-child(1) { animation-delay: 0.1s; }
 .pill-button:nth-child(2) { animation-delay: 0.2s; }
 .pill-button:nth-child(3) { animation-delay: 0.3s; }
+.pill-button:nth-child(4) { animation-delay: 0.4s; }
 
 .pill-button:hover {
   background: rgba(255, 255, 255, 0.05);
@@ -182,7 +183,7 @@
 }
 
 .price-header-pill {
-  background: #a06a50;
+  background: #A93500;
   padding: 8px 30px;
   border-radius: 40px;
   width: 100%;
@@ -235,7 +236,7 @@
 .price-card:nth-child(3) { animation-delay: 0.7s; }
 
 .card-header-pill {
-  background: #a06a50;
+  background: #A93500;
   color: white;
   padding: 6px 20px;
   border-radius: 25px;
