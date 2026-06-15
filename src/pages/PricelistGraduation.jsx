@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const priceItems = [
   { time: '2 hours', price: '250k', drive: '10 day', grading: '15 Color', note1: '+15 Menit Fee 30k', note2: '+1 Person Fee 35k' },
-  { time: '3 hours', price: '350', drive: '18 day', grading: '25 Color', note1: '+15 Menit Fee 30k', note2: '+1 Person Fee 35k, Free Video 20 sec'  }
+  { time: '3 hours', price: '350k', drive: '18 day', grading: '25 Color', note1: '+15 Menit Fee 30k', note2: '+1 Person Fee 35k, Free Video 20 sec'  }
 ];
 
 const PriceCard = ({ item }) => (
